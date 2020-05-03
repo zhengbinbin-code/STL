@@ -1,6 +1,7 @@
 #include"string.h"
 #include"vector.h"
 #include"list.h"
+#include"stack.h"
 #include<iostream>
 using namespace std;
 
@@ -260,9 +261,31 @@ void list_test2()
 //	}
 //}
 
+#include<vector>
+#include<list>
+#include<deque>
+void test_stack()
+{
+	//Stack<int, vector<int>> s;
+	//Stack<int, list<int>> s;
+	//Stack<int, deque<int>> s;
+	Stack<int> s;
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	s.push(4);
+	while (!s.empty())
+	{
+		cout << s.top() << " ";
+		s.pop();
+	}
+	cout << endl;
+}
+
 int main()
 {
-
+	test_stack();
+	cout << "helloworld" << endl;
 
 	//test_queue1();
 	//test_stack1();
