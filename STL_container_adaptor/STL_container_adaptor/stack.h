@@ -1,5 +1,6 @@
 #pragma once
 
+//ÊÊÅäÆ÷Ä£Ê½  ×ª»»
 template<class T, class Container = deque<T>>
 class Stack
 {

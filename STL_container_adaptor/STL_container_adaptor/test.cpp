@@ -2,6 +2,8 @@
 #include"vector.h"
 #include"list.h"
 #include"stack.h"
+#include"queue.h"
+#include"priority_queue.h"
 #include<iostream>
 using namespace std;
 
@@ -261,31 +263,139 @@ void list_test2()
 //	}
 //}
 
-#include<vector>
-#include<list>
-#include<deque>
-void test_stack()
+//#include<vector>
+//#include<list>
+//#include<deque>
+//void test_stack()
+//{
+//	//Stack<int, vector<int>> s;
+//	//Stack<int, list<int>> s;
+//	//Stack<int, deque<int>> s;
+//	Stack<int> s;  //默认用deque
+//	s.push(1);
+//	s.push(2);
+//	s.push(3);
+//	s.push(4);
+//	while (!s.empty())
+//	{
+//		cout << s.top() << " ";
+//		s.pop();
+//	}
+//	cout << endl;
+//}
+
+//#include<vector>
+//#include<list>
+//#include<deque>
+//void test_queue()
+//{
+//	//Queue<int, vector<int>> q;	//报错 vector没有pop_front接口,而实现Queue用到了pop_front
+//	//Queue<int, list<int>> q;
+//	//Queue<int, deque<int>> q;
+//	Queue<int> q;	//默认用deque
+//	q.push(9);
+//	q.push(8);
+//	q.push(7);
+//	q.push(6);
+//	while (!q.empty())
+//	{
+//		cout << q.front() << " ";
+//		q.pop();
+//	}
+//	cout << endl;
+//}
+
+//#include<queue>
+//#include<vector>
+//#include<functional>
+//void test_priority_queue()
+//{
+//	//1.排序(辅助作用)
+//	//2.topk问题
+//	//默认大的优先级高
+//	priority_queue<int> maxq;
+//	maxq.push(1);
+//	maxq.push(5);
+//	maxq.push(3);
+//	maxq.push(4);
+//	maxq.push(2);
+//	while (!maxq.empty())
+//	{
+//		cout << maxq.top() << " ";
+//		maxq.pop();
+//	}
+//	cout << endl;
+//
+//	//仿函数，函数对象
+//	priority_queue<int, vector<int>, greater<int>> minq;
+//	minq.push(1);
+//	minq.push(5);
+//	minq.push(3);
+//	minq.push(4);
+//	minq.push(2);
+//	while (!minq.empty())
+//	{
+//		cout << minq.top() << " ";
+//		minq.pop();
+//	}
+//	cout << endl;
+//}
+
+//仿函数不是函数，它是一个类，行为像函数，别名函数对象
+//template<class T>
+//class my_less
+//{
+//public:
+//	bool operator()(const T& l, const T& r)
+//	{
+//		return l < r;
+//	}
+//};
+
+void test_priority_queue2()
 {
-	//Stack<int, vector<int>> s;
-	//Stack<int, list<int>> s;
-	//Stack<int, deque<int>> s;
-	Stack<int> s;
-	s.push(1);
-	s.push(2);
-	s.push(3);
-	s.push(4);
-	while (!s.empty())
+	Priority_queue<int> maxq;
+	maxq.push(4);
+	maxq.push(2);
+	maxq.push(5);
+	maxq.push(8);
+	maxq.push(3);
+	maxq.push(1);
+	maxq.push(9);
+	maxq.push(6);
+	while (!maxq.empty())
 	{
-		cout << s.top() << " ";
-		s.pop();
+		cout << maxq.top() << " ";
+		maxq.pop();
+	}
+	cout << endl;
+
+	Priority_queue<int, vector<int>, my_greater<int>> minq;
+	minq.push(4);
+	minq.push(2);
+	minq.push(5);
+	minq.push(8);
+	minq.push(3);
+	minq.push(1);
+	minq.push(9);
+	minq.push(6);
+	while (!minq.empty())
+	{
+		cout << minq.top() << " ";
+		minq.pop();
 	}
 	cout << endl;
 }
 
 int main()
 {
-	test_stack();
-	cout << "helloworld" << endl;
+	test_priority_queue2();
+	//my_less<int> less_int;
+	//cout << less_int(1, 2) << endl;
+	//test_priority_queue();
+
+	//test_queue();
+	//test_stack();
 
 	//test_queue1();
 	//test_stack1();
