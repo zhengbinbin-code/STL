@@ -80,7 +80,11 @@ public:
 			T* tmp = new T[n];
 			if (_start)
 			{
-				memcpy(tmp, _start, sizeof(T)*sz);
+				//memcpy(tmp, _start, sizeof(T)*sz);//拷string会出现浅拷贝问题
+				for (size_t i = 0; i < sz; ++i)
+				{
+					tmp[i] = _start[i];
+				}
 				delete[]_start;
 			}
 			_start = tmp;
