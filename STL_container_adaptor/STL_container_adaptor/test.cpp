@@ -135,6 +135,23 @@ void vector_test2()
 	cout << endl;
 }
 
+//#include<string>
+//void vector_test3()
+//{
+//	Vector<string> v;
+//	v.push_back("1111111111111");
+//	v.push_back("1111111111111");
+//	v.push_back("1111111111111");
+//	v.push_back("1111111111111");
+//
+//	for (auto& e : v)
+//	{
+//		cout << e << " ";
+//	}
+//	cout << endl;
+//}
+
+
 //#include<list>
 //#include<algorithm>
 //void test_list1()
@@ -389,7 +406,7 @@ void test_priority_queue2()
 
 int main()
 {
-	test_priority_queue2();
+	//test_priority_queue2();
 	//my_less<int> less_int;
 	//cout << less_int(1, 2) << endl;
 	//test_priority_queue();
@@ -408,6 +425,7 @@ int main()
 
 	//vector_test1();
 	//vector_test2();
+	//vector_test3();
 
 	//test_vector1();
 	//cout << int() << endl;
