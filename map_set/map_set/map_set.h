@@ -116,7 +116,47 @@ void test_map_set2()
 			ret.first->second++;
 		}
 	}*/
+}
 
+void test_map_set3()
+{
+	map<string, string>dict;
+	dict.insert(pair<string, string>("insert", "插入"));
+	dict.insert(make_pair("isnrt", "插入"));
+
+	dict.insert(pair<string, string>("left", "左边"));
+	dict.insert(make_pair("left", "剩余"));
+	dict["left"] = "剩余";		//方括号的作用：查找+修改(查找时如果不存在就会插入)
+	dict["string"] = "字符串";		//方括号的作用：查找+插入
+}
+
+void test_map_set4()
+{
+	set<int> s;
+	s.insert(3);
+	s.insert(2);
+	s.insert(1);
+	s.insert(2);
+	s.insert(4);
+
+	multiset<int> ms;
+	ms.insert(3);
+	ms.insert(2);
+	ms.insert(1);
+	ms.insert(2);
+	ms.insert(4);
+	
+	for (auto e : s)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
+
+	for (auto e : ms)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
 }
 
 
