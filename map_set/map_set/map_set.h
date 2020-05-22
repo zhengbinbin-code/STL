@@ -2,6 +2,7 @@
 #include<map>
 #include<set>
 #include<string>
+using namespace std;
 
 void test_map_set1()
 {
@@ -159,7 +160,105 @@ void test_map_set4()
 	cout << endl;
 }
 
+void test_map_set5()
+{
+	map<string, string> dict;
+	dict.insert(pair<string, string>("insert", "插入"));
+	dict.insert(pair<string, string>("left", "左边"));
+	dict.insert(pair<string, string>("right", "右边"));
+	dict.insert(pair<string, string>("node", "节点"));
+	dict.insert(pair<string, string>("tree", "树"));
 
+	map<string, string>::iterator dit = dict.begin();
+	while (dit != dict.end())
+	{
+		cout << (*dit).first << "----" << (*dit).second << endl;
+		cout << dit->first << "----" << dit->second << endl;
+		++dit;
+	}
+
+	string strs[] = { "苹果", "西瓜", "草莓", "草莓", "西瓜", "草莓" };
+	map<string, int> countMap;
+	for (auto& e : strs)
+	{
+		map<string, int>::iterator it = countMap.find(e);
+		if (it != countMap.end())
+		{
+			it->second++;
+		}
+		else
+		{
+			countMap.insert(pair<string, int>(e, 1));
+		}
+	}
+}
+
+
+//#include<vector>
+//#include<algorithm>
+//#include<queue>
+//struct CountCompare
+//{
+//	bool operator()(const pair<string, int>& l, const pair<string, int>& r)
+//	{
+//		return l.second > r.second;
+//	}
+//};
+//void GetFavoriteFruit1(const vector<string>& fruits, size_t k)
+//{
+//	//1.统计各种水果出现的次数
+//	map<string, int> countMap;
+//	for (auto& e : fruits)
+//	{
+//		countMap[e]++;
+//	}
+//	//2.找出大家最喜欢吃的水果
+//	//数组、vector、deque(效率低)
+//	//vector<pair<string, int>> v(countMap.begin(),countMap.end());	//构造函数支持迭代器区间构造
+//	vector<pair<string, int>> v;
+//	for (auto& e : countMap)
+//	{
+//		v.push_back(e);
+//	}
+//
+//	//O(N*logN)
+//	sort(v.begin(), v.end(), CountCompare());
+//	for (size_t i = 0; i < k; ++i)
+//	{
+//		cout << v[i].first << ":" << v[i].second << endl;
+//	}
+//}
+//
+//void GetFavoriteFruit2(const vector<string>& fruits, size_t k)
+//{
+//	//1.统计各种水果出现的次数
+//	map<string, int> countMap;
+//	for (auto& e : fruits)
+//	{
+//		countMap[e]++;
+//	}
+//	//2.找出大家最喜欢吃的水果
+//	//找最大的前k个
+//	priority_queue<pair<string, int>, vector<pair<string, int>>, CountCompare> pq;
+//	size_t i = 0;
+//	for (auto& e : countMap)
+//	{
+//		if (i < k)
+//		{
+//			pq.push(e);
+//			++i;
+//		}
+//		else
+//		{
+//			//O(logK)*N
+//			if (e.second > pq.top().second)
+//			{
+//				pq.pop();
+//				pq.push(e);
+//			}
+//		}
+//	}
+//}
 
 
 
