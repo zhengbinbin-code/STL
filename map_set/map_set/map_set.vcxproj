@@ -70,6 +70,9 @@
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="map_set.h" />
+    <ClInclude Include="MyMap.h" />
+    <ClInclude Include="MySet.h" />
+    <ClInclude Include="RBTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

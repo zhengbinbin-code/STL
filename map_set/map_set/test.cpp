@@ -1,9 +1,14 @@
+#pragma once
 #include<iostream>
 using namespace std;
+#include<cassert>
 
 #include"BinarySearchTree.h"
 #include"map_set.h"
 #include"AVLTree.h"
+#include"RBTree.h"
+#include"MyMap.h"
+#include"MySet.h"
 
 //#include<vector>		//随机迭代器
 //#include<list>			//双向迭代器
@@ -34,8 +39,12 @@ int main()
 
 	//test1();
 
-	testAVLTree();
+	//testAVLTree();
 
+	//testRBTree();
+
+	my::test_map();
+	my::test_set();
 
 
 	//TestBSTreeKV1();
